@@ -2,15 +2,24 @@ package com.educaionit;
 
 import com.educaionit.constructores.Persona;
 import com.educaionit.encapsulamiento.CuentaBancaria;
+import com.educaionit.figuras.*;
 import com.educaionit.getterSetter.Perro;
 import com.educaionit.herencia.ClaseA;
 import com.educaionit.herencia.ClaseB;
 import com.educaionit.herencia.ClaseC;
+import com.educaionit.polimorfismo.Auto;
+import com.educaionit.polimorfismo.Barco;
+import com.educaionit.polimorfismo.Helicoptero;
+import com.educaionit.polimorfismo.Vehiculo;
 import com.educaionit.sobrecargaMetodos.Sumador;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
+        /*
         //Pruebas encapsulamiento
         CuentaBancaria cuentaBancaria = new CuentaBancaria();
         cuentaBancaria.depositarDinero(550f);
@@ -61,6 +70,52 @@ public class Main {
         perro.setNombre("Cucho");
         System.out.println("El nuevo nombre del perro es:" + perro.getNombre());
         System.out.println("El perro es:" + perro.toString());
+
+        //Pruebas de Polimorfismo
+
+        System.out.println("Polimorfismo");
+        Auto auto1 = new Auto("VW","Vento", 30);
+        Auto auto2 = new Auto("Ford","Focus", 40);
+        Auto auto3 = new Auto("Ferrari","F1", 30);
+
+        List<Vehiculo> flota = new ArrayList<Vehiculo>();
+
+        flota.add(auto1);
+        flota.add(auto2);
+        flota.add(auto3);
+
+        for (Vehiculo vehiculo: flota) {
+            vehiculo.desplazarse(150);
+        }
+        System.out.println("Segunda Iteración");
+
+        Barco barco1 = new Barco("BarcoMarca","modeloBarco",250);
+        Helicoptero heli1 = new Helicoptero("helico", "modeloHeli",150);
+
+        flota.add(barco1);
+        flota.add(heli1);
+
+        for (Vehiculo vehiculo: flota) {
+            vehiculo.desplazarse(150);
+        }
+        */
+
+
+        System.out.println("Ejercicio 4 - Figuras");
+
+        List<Figura> figs = new ArrayList<Figura>();
+        figs.add(new Circulo("Rojo","Circulo1",5));
+        figs.add(new Cuadrado("Rojo","cuadrado1",5));
+        figs.add(new Triangulo("Azul","Tri1",5, 15));
+        figs.add(new Circulo("Verde","Circulo2",15));
+        figs.add(new Rectangulo("Marrón","Rec1",5,10));
+        figs.add(new Cuadrado("Rojo","cuadrado2",10));
+
+        for (Figura figura: figs) {
+            System.out.println(figura.getNombre() + " " + figura.getColor());
+            figura.calcularSuperficie();
+
+        }
 
 
     }
