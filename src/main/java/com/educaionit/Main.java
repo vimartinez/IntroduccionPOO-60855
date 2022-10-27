@@ -12,6 +12,7 @@ import com.educaionit.polimorfismo.Barco;
 import com.educaionit.polimorfismo.Helicoptero;
 import com.educaionit.polimorfismo.Vehiculo;
 import com.educaionit.sobrecargaMetodos.Sumador;
+import com.educaionit.staticconstant.Circulo2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +118,25 @@ public class Main {
 
         }
 
+        //Ejemplo de static
+
+        System.out.println("Metodos de Clase");
+
+        System.out.println(Circulo2.PI);
+        //System.out.println(Circulo2.cantCirculo2);
+        //Circulo2.cantCirculo2 = 5;
+        System.out.println(Circulo2.cantCirculo2);
+        Circulo2.setCant2Circulo2(45);
+        System.out.println(Circulo2.getCant2Circulo2());
+        Double supCirculo = Circulo2.calcularSuperficieCirculo(10);
+        System.out.println("La superficie del círculo de radio 10 es:" + supCirculo.toString());
+
+        Circulo2 C1 = new Circulo2("Rojo", "C1");
+        Circulo2 C2 = new Circulo2("Rojo", "C2");
+        Circulo2 C3 = new Circulo2("Rojo", "C3");
+
+       // Circulo2.cantCirculo2 = 15;
+        System.out.println(Circulo2.cantCirculo2);
 
     }
 }
